@@ -8,6 +8,8 @@ public class HelloWorld {
     public static void main(String[] args) {
 
         String message = "Hello, World! " + args[0];
+        String message1 = "Hello, World! " + args[1];
         logger.info(message);
+        logger.info(message1);
     }
 }
