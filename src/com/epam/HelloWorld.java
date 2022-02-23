@@ -9,11 +9,14 @@ public class HelloWorld {
     public static void main(String[] args) {
         HomeWork1 homeWork1 = new HomeWork1();
 
-        int fibResult = homeWork1.fibonachchi(10);
-        logger.log(Level.INFO, "Number = {0}", fibResult);
+        int fibonachchiResult = homeWork1.fibonachchi(10);
+        logger.log(Level.INFO, "Number = {0}", fibonachchiResult);
 
         String s = homeWork1.divMod(65, 6);
         logger.info(s);
+
+        String s1 = homeWork1.fuzzBuzz(-6);
+        logger.info(s1);
 
     }
 }

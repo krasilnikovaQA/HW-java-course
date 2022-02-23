@@ -1,10 +1,11 @@
 package com.epam;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class HomeWork1 {
-    private static final Logger logger = Logger.getLogger("HomeWork1");
+
+    public static final String FUZZ = "fuzz";
+    public static final String BUZZ = "buzz";
 
     public int fibonachchi(int numbOfRepeat){
         int x = 0;
@@ -45,4 +46,22 @@ public class HomeWork1 {
     }
     }
 
+    public String fuzzBuzz(int x){
+
+        if (x<0){
+            return "Number should be more than 0";
+        }
+        if(x%3==0&&x%5==0){
+            return FUZZ + BUZZ;
+        }
+        else if (x%3==0){
+            return FUZZ;
+        }
+        else if (x%5==0){
+            return BUZZ;
+        }
+        else {
+            return "Number is not divided on 3 or 5";
+        }
+    }
 }
