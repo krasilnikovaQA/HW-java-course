@@ -7,21 +7,20 @@ public class HomeWork1 {
     public static final String FUZZ = "fuzz";
     public static final String BUZZ = "buzz";
 
-    public int fibonachchi(int numbOfRepeat){
+    public int fibonachchi(int numbOfRepeat) {
         int x = 0;
         int x1 = 1;
         int temp;
-        if(numbOfRepeat>0){
-            while (numbOfRepeat>0){
+        if (numbOfRepeat > 0) {
+            while (numbOfRepeat > 0) {
                 temp = x;
-                x=x1;
-                x1=temp+x1;
+                x = x1;
+                x1 = temp + x1;
                 numbOfRepeat--;
             }
             return x;
 
-        }
-        else
+        } else
             return x;
     }
 
@@ -43,25 +42,45 @@ public class HomeWork1 {
             divModResult = "Each numbers is 0";
             return divModResult;
 
-    }
+        }
     }
 
-    public String fuzzBuzz(int x){
+    public String fuzzBuzz(int x) {
 
-        if (x<0){
+        if (x < 0) {
             return "Number should be more than 0";
         }
-        if(x%3==0&&x%5==0){
+        if (x % 3 == 0 && x % 5 == 0) {
             return FUZZ + BUZZ;
-        }
-        else if (x%3==0){
+        } else if (x % 3 == 0) {
             return FUZZ;
-        }
-        else if (x%5==0){
+        } else if (x % 5 == 0) {
             return BUZZ;
-        }
-        else {
+        } else {
             return "Number is not divided on 3 or 5";
         }
     }
+
+    public boolean isPalindrome(int x){
+        StringBuilder stringBuilder;
+        if(x>=0){
+            stringBuilder = new StringBuilder(String.valueOf(x));
+            String s = stringBuilder.toString();
+            String s1 = stringBuilder.reverse().toString();
+            if(s.equals(s1)){
+                System.out.println(stringBuilder);
+                System.out.println(stringBuilder.reverse());
+                System.out.println("true");
+                return true;
+            }
+            else {
+                System.out.println("false");
+                return false;
+            }
+        }
+        System.out.println("false");
+        return false;
+    }
+
+
 }

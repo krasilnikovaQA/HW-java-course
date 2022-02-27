@@ -18,5 +18,7 @@ public class HelloWorld {
         String s1 = homeWork1.fuzzBuzz(-6);
         logger.info(s1);
 
+        boolean b = homeWork1.isPalindrome(0);
+
     }
 }
