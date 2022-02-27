@@ -68,19 +68,32 @@ public class HomeWork1 {
             String s = stringBuilder.toString();
             String s1 = stringBuilder.reverse().toString();
             if(s.equals(s1)){
-                System.out.println(stringBuilder);
-                System.out.println(stringBuilder.reverse());
-                System.out.println("true");
                 return true;
             }
             else {
-                System.out.println("false");
                 return false;
             }
         }
-        System.out.println("false");
         return false;
     }
 
+    public int[] twoSum(int[] nums, int target) {
+        if(nums.length==0){
+            return nums;
+        }
+        int[] targetArray = new int[2];
+        for (int i = 0; i < nums.length; i++) {
+            int elFirst = nums[i];
+            for (int j = i+1; j < nums.length; j++) {
+                int elSec = nums[j];
+                if(elFirst+elSec==target){
+                    targetArray[0] = i;
+                    targetArray[1] = j;
+                    return targetArray;
+                }
+            }
+        }
+        return targetArray;
+    }
 
 }

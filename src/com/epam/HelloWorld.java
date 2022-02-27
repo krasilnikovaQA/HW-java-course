@@ -1,5 +1,6 @@
 package com.epam;
 
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,6 +20,11 @@ public class HelloWorld {
         logger.info(s1);
 
         boolean b = homeWork1.isPalindrome(0);
+        logger.info("Is polindrome " + b);
+
+        int[] res= homeWork1.twoSum(new int[]{3,5,4,5},10);
+        logger.info(Arrays.toString(res));
+
 
     }
 }
