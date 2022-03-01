@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class HelloWorld {
-    private static final Logger logger = Logger.getLogger("HelloWorld");
+public class Main {
+    private static final Logger logger = Logger.getLogger("Main");
 
     public static void main(String[] args) {
         HomeWork1 homeWork1 = new HomeWork1();
