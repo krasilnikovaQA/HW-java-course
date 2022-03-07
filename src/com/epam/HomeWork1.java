@@ -1,6 +1,5 @@
 package com.epam;
 
-import java.util.logging.Logger;
 
 public class HomeWork1 {
 
@@ -11,8 +10,8 @@ public class HomeWork1 {
         int x = 0;
         int x1 = 1;
         int temp;
-        if (numbOfRepeat > 0) {
-            while (numbOfRepeat > 0) {
+        if (numbOfRepeat > 1) {
+            while (numbOfRepeat > 1) {
                 temp = x;
                 x = x1;
                 x1 = temp + x1;
@@ -22,6 +21,16 @@ public class HomeWork1 {
 
         } else
             return x;
+    }
+
+    public int fibonachchiRecursion(int num){
+        if (num <= 1) {
+            return 0;
+        } else if (num == 2) {
+            return 1;
+        } else {
+            return fibonachchiRecursion(num - 1) + fibonachchiRecursion(num - 2);
+        }
     }
 
     public String divMod(int x, int y) {
@@ -67,12 +76,7 @@ public class HomeWork1 {
             stringBuilder = new StringBuilder(String.valueOf(x));
             String s = stringBuilder.toString();
             String s1 = stringBuilder.reverse().toString();
-            if(s.equals(s1)){
-                return true;
-            }
-            else {
-                return false;
-            }
+            return s.equals(s1);
         }
         return false;
     }
@@ -95,5 +99,38 @@ public class HomeWork1 {
         }
         return targetArray;
     }
+
+    public int mySqrt(int x) {
+
+        if(x <= 1){
+            return x;
+        }
+
+        int start = 1;
+        int end = x/2;
+
+        while(start < end) {
+            int mid = (start + (end-start)/2) + 1;
+            int div = x/mid;
+            if(div == mid) return mid;
+            if(div > mid) start = mid;
+            else end = mid-1;
+        }
+        return start;
+    }
+
+    public int lengthOfLastWord(String s) {
+        String[] separatedWords = s.split(" ");
+        return separatedWords[separatedWords.length-1].length();
+    }
+
+
+
+
+
+
+
+
+
 
 }
