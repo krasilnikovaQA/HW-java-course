@@ -1,4 +1,4 @@
-package com.epam;
+package com.epam.homework1;
 
 
 public class HomeWork1 {
