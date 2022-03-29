@@ -1,53 +1,36 @@
 package com.epam.homework2;
 
-import com.epam.homework1.Main;
-
 import java.util.Random;
 import java.util.logging.Logger;
 
 public class Game {
     private static final Logger logger = Logger.getLogger(Game.class.getName());
+    public static final int BOUND = 51;
+    public static final int MIDDLE_VALUE = 25;
 
     public static void main(String[] args) {
 
+        Wolfrider wolfRider = new Wolfrider(7, 5, 4, 10, 6, null, 0, 3, "Wolf Rider");
+        Thunderbird thunderBird = new Thunderbird(13, 11, 15, 60, 11, null, MIDDLE_VALUE, 4, "Thunder Bird");
 
-        CitadelHero citadelHero1 = new CitadelHero(7,5,4, 10,6, null, 0, 3,"Wolf Rider");
-        CitadelHero citadelHero2 = new CitadelHero(13,11,15, 60,11, null, 25, 4, "Thander Bird");
+        wolfRider.targetEnemy(thunderBird);
+        thunderBird.targetEnemy(wolfRider);
 
-        citadelHero1.targetEnemy(citadelHero2);
-        citadelHero2.targetEnemy(citadelHero1);
+        boolean isSomeoneDead = false;
 
-        boolean isSomeoneDead=false;
-
-
-
-        while (!isSomeoneDead){
+        while (!isSomeoneDead) {
             Random random = new Random();
-            int i = random.nextInt(51);
+            int i = random.nextInt(BOUND);
             logger.info("Random number is " + i);
-            if(i>25){
+            if (i > MIDDLE_VALUE) {
                 logger.info("Hero1 attack");
-                if(citadelHero1.getAttack()>= Math.abs(citadelHero2.getxCoordinate()- citadelHero1.getxCoordinate())){
-                    citadelHero1.attack();
-                    isSomeoneDead = citadelHero2.die();
-                } else {
-                    logger.info("Hero 1 is moving");
-                    citadelHero1.move(citadelHero1.getSpeed());
-                }
-            }else {
+                wolfRider.action();
+                isSomeoneDead = thunderBird.checkHeroDead();
+            } else {
                 logger.info("Hero2 attack");
-                if(citadelHero2.getAttack()>=Math.abs(citadelHero1.getxCoordinate()-citadelHero2.getxCoordinate())) {
-                    citadelHero2.attack();
-                    isSomeoneDead = citadelHero1.die();
-                } else {
-                    logger.info("Hero 2 is moving");
-
-                    citadelHero2.move(citadelHero2.getSpeed());
-                }
-
+                thunderBird.action();
+                isSomeoneDead = wolfRider.checkHeroDead();
             }
-
         }
-
     }
 }
